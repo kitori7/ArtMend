@@ -1,6 +1,6 @@
 import React from 'react'
-import { View } from '@tarojs/components'
-import { Button } from "@nutui/nutui-react-taro"
+import { View,Text } from '@tarojs/components'
+import { Button,Calendar  } from "@nutui/nutui-react-taro"
 import './index.scss'
 
 function Index() {
@@ -9,10 +9,12 @@ function Index() {
       <View className="index">
         欢迎使用 NutUI React 开发 Taro 多端项目。
       </View>
+      <Text></Text>
       <View className="index">
         <Button type="primary" className="btn">
           NutUI React Button
         </Button>
+        <Calendar visible={true}></Calendar>
       </View>
     </View>
   )
