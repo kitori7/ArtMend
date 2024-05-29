@@ -1,6 +1,6 @@
 import React from 'react'
 import { View,Text } from '@tarojs/components'
-import { Button,Calendar  } from "@nutui/nutui-react-taro"
+import { Button  } from "@nutui/nutui-react-taro"
 import './index.scss'
 
 function Index() {
@@ -14,7 +14,6 @@ function Index() {
         <Button type="primary" className="btn">
           NutUI React Button
         </Button>
-        <Calendar visible={true}></Calendar>
       </View>
     </View>
   )
