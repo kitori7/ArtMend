@@ -1,27 +1,31 @@
-.nutui-react-demo {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.index {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  margin-bottom: 30px;
+
+.mine{
+  --nutui-navbar-background:#1C1C1C;
+  --nutui-navbar-title-font-color:#fff;
+  --nutui-navbar-height:58px;
+  .header{
+    width: 360px;
+    height: 58px;
+    background-color: #1C1C1C;
+    color: #fff;
+    line-height: 58px;
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    margin-right: -10px;
+    border-right: 10px solid skyblue;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    background-color: transparent;
+  }
+
 }
 
-.title {
-  display: block;
-  margin: 20px 0;
-  font-weight: 600;
-}
-
-.btn {
-  display: block;
-  width: 200px;
-  margin-bottom: 20px;
-}
