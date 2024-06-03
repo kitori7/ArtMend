@@ -37,12 +37,13 @@ function Index() {
           <Button className="btn" fill="none">
             点击导入图片
           </Button>
-          {/* <Image
+          <Image
+            className="img"
             // src={src}
             onClick={() => {
               console.log("click image");
             }}
-          /> */}
+          />
         </View>
         <Tabbar
           activeColor="green"
