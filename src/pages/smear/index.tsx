@@ -11,7 +11,7 @@ import {
 
 import "./index.scss";
 import "./iconfont.css";
-
+import "../../icon/iconfont.css";
 function Index() {
   const [value, setValue] = useState(40);
   const [smearBoxShow, isSboxShow] = useState(false);
@@ -63,13 +63,13 @@ function Index() {
           {smearBoxShow && (
             <View className="smearBox">
               <View className="color">
-                <span className="iconfont">画板</span>
+                <span className="iconfont">&#xe600;</span>
                 <button className="selection"></button>
                 <button className="selection"></button>
                 <button className="selection"></button>
               </View>
               <View className="pencil">
-                <span className="iconfont">粗细</span>
+                <span className="iconfont">&#xe61f;</span>
                 <Range
                   value={value}
                   className="range"

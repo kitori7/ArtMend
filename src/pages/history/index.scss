@@ -7,21 +7,40 @@
 }
 
 .index {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: left;
   align-items: center;
   font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.title {
-  display: block;
-  margin: 20px 0;
-  font-weight: 600;
-}
-
-.btn {
-  display: block;
-  width: 200px;
-  margin-bottom: 20px;
+  height: 100%;
+  .navbar {
+    height: 15vw;
+    width: 100vw;
+    background-color: #000000;
+    color: white;
+    --nutui-navbar-title-font-color: white;
+    margin-bottom: 0 !important;
+  }
+  .imgScroll {
+    flex: 1;
+    overflow: auto;
+    background-color: #f4f4f4;
+    .imgList {
+      width: 100vw;
+      background-color: #ffffff;
+      border: 0;
+      .imgItems {
+        height: 50vw;
+        width: 100%;
+      }
+    }
+    .nut-grid-item-content,
+    .nut-grid-item-content-border,
+    .nut-grid-item-content-center,
+    .nut-grid-item-content-square,
+    .nut-grid-item-content-vertical {
+      border: 0px !important;
+    }
+  }
 }

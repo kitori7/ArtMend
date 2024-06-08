@@ -60,10 +60,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 1vw 0 2vw;
-      .iconfont {
-        margin-right: 1vw;
-      }
+      margin: 0 1vw 0 5vw;
       .selection {
         margin: 0 0.5vw;
         height: 6vw;
@@ -95,6 +92,10 @@
         --nutui-range-button-width: 4vw;
         --nutui-range-button-height: 4vw;
       }
+    }
+    .iconfont {
+      margin-right: 1vw;
+      font-size: 7vw;
     }
   }
 }

@@ -3,6 +3,7 @@ import { View } from "@tarojs/components";
 import { Swiper, Button, Tabbar, Image } from "@nutui/nutui-react-taro";
 import { Cart, Category, Find, Home, User } from "@nutui/icons-react";
 import "./index.scss";
+import "../../icon/iconfont.css";
 const list = [
   "https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg",
   "https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg",
@@ -51,19 +52,19 @@ function Index() {
           >
             <Tabbar.Item
               title="图片编辑"
-              icon={<Home width={28} height={28} />}
+              icon={<span className="iconfont">&#xe636;</span>}
             />
             <Tabbar.Item
               title="Ai消除"
-              icon={<Category width={28} height={28} />}
+              icon={<span className="iconfont">&#xe632;</span>}
             />
             <Tabbar.Item
               title="Ai抠图"
-              icon={<Find width={28} height={28} />}
+              icon={<span className="iconfont">&#xe6e1;</span>}
             />
             <Tabbar.Item
               title="文字识别"
-              icon={<Cart width={28} height={28} />}
+              icon={<span className="iconfont">&#xe665;</span>}
             />
           </Tabbar>
         </View>

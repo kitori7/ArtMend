@@ -14,7 +14,7 @@ function Index() {
             className="head"
             src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg"
           />
-          <h2 className="name">人坤的朋子</h2>
+          <h2 className="name">没鸟的朋子</h2>
         </View>
         <ul className="other">
           <li>
