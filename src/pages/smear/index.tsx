@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "@tarojs/components";
-import { NavBar, Image, Tabbar, Button } from "@nutui/nutui-react-taro";
+import { NavBar, Image, Tabbar, Button, Range } from "@nutui/nutui-react-taro";
 import {
   ArrowLeft,
   Download,
@@ -13,6 +13,8 @@ import "./index.scss";
 import "./iconfont.css";
 
 function Index() {
+  const [value, setValue] = useState(40);
+  const [smearBoxShow, isSboxShow] = useState(false);
   return (
     <View className="nutui-react-demo">
       <View className="index">
@@ -48,13 +50,34 @@ function Index() {
         <Tabbar
           activeColor="green"
           inactiveColor="white"
-          className="bottom"
-          defaultValue={0}
-          // value={activeIndex}
-          // onSwitch={(value) => {
-          //   setActiveIndex(value);
-          // }}
+          className="tabbar"
+          defaultValue={-1}
+          onSwitch={(value) => {
+            if (value == 2) {
+              isSboxShow(true);
+            } else {
+              isSboxShow(false);
+            }
+          }}
         >
+          {smearBoxShow && (
+            <View className="smearBox">
+              <View className="color">
+                <span className="iconfont">画板</span>
+                <button className="selection"></button>
+                <button className="selection"></button>
+                <button className="selection"></button>
+              </View>
+              <View className="pencil">
+                <span className="iconfont">粗细</span>
+                <Range
+                  value={value}
+                  className="range"
+                  onChange={(val: any) => setValue(val)}
+                />
+              </View>
+            </View>
+          )}
           <Tabbar.Item
             className="item"
             title="导入"
@@ -77,12 +100,6 @@ function Index() {
             title="恢复"
             icon={<View className="iconfont icon-huifu"></View>}
           />
-          <Tabbar.Item
-            className="item"
-            title="更多"
-            icon={<View className="iconfont icon-gengduo"></View>}
-          />
-          {/* 点击更多弹出是否重载模型 */}
         </Tabbar>
       </View>
     </View>

@@ -51,19 +51,19 @@ function Index() {
           >
             <Tabbar.Item
               title="图片编辑"
-              icon={<Home width={24} height={24} />}
+              icon={<Home width={28} height={28} />}
             />
             <Tabbar.Item
               title="Ai消除"
-              icon={<Category width={24} height={24} />}
+              icon={<Category width={28} height={28} />}
             />
             <Tabbar.Item
               title="Ai抠图"
-              icon={<Find width={24} height={24} />}
+              icon={<Find width={28} height={28} />}
             />
             <Tabbar.Item
               title="文字识别"
-              icon={<Cart width={24} height={24} />}
+              icon={<Cart width={28} height={28} />}
             />
           </Tabbar>
         </View>

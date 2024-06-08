@@ -10,7 +10,8 @@
     flex-direction: column;
     justify-content: left;
     align-items: center;
-    height: 100%;
+    flex: 1;
+    overflow: auto;
     width: 100%;
     font-size: 16px;
     margin-bottom: 30px;
@@ -35,6 +36,8 @@
       margin: 5px 0;
       height: 80px;
       width: 95%;
+      font-weight: 800;
+      --nutui-tabbar-text-font-size: 12px;
     }
     .history {
       display: flex;
@@ -55,7 +58,7 @@
         flex-wrap: wrap;
         .img {
           width: 47%;
-          height: 200px;
+          height: 150px;
           margin: 5px;
         }
       }

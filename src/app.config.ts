@@ -4,6 +4,7 @@ export default defineAppConfig({
     "pages/mine/index",
     "pages/smear/index",
     "pages/recognize/index",
+    "pages/history/index",
   ],
   window: {
     backgroundTextStyle: "light",

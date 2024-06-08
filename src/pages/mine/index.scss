@@ -1,21 +1,20 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-
-.mine{
-  --nutui-navbar-background:#1C1C1C;
-  --nutui-navbar-title-font-color:#fff;
-  --nutui-navbar-height:58px;
-  .header{
+.mine {
+  --nutui-navbar-background: #1c1c1c;
+  --nutui-navbar-title-font-color: #fff;
+  --nutui-navbar-height: 58px;
+  .header {
     width: 360px;
     height: 58px;
-    background-color: #1C1C1C;
+    background-color: #1c1c1c;
     color: #fff;
     line-height: 58px;
   }
-  
+
   .triangle {
     width: 0;
     height: 0;
@@ -26,6 +25,82 @@
     border-left: 10px solid transparent;
     background-color: transparent;
   }
-
 }
 
+.nutui-react-demo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 30px;
+  width: 100%;
+  .navbar {
+    width: 100%;
+    text-align: center;
+    height: 15vw;
+    font-size: 6vw;
+    line-height: 15vw;
+    font-weight: 800;
+    background-color: #000;
+    color: #fff;
+  }
+  .user {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+    margin: 2vw 0;
+    height: 30vw;
+    color: #000;
+    background-color: #eeeeee;
+    border-radius: 5vw;
+    .head {
+      width: 20vw;
+      height: 20vw;
+      margin: 0 5vw 0 10vw;
+      border-radius: 20vw;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+  }
+  .other {
+    width: 90%;
+    list-style: none;
+    background-color: #f5f5f5;
+    li {
+      width: 100%;
+    }
+    .btn {
+      width: 100%;
+      height: 15vw;
+      text-align: center;
+      line-height: 1.75 !important;
+      font-size: 4.5vw;
+      font-weight: 600;
+      --nutui-popup-border-radius: 0px;
+      margin: 0 !important;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  .about {
+    height: 80%;
+    h2 {
+      font-size: 8vw;
+      text-align: center;
+      margin: 3vw 0;
+    }
+    p {
+      padding: 0 10vw;
+      font-size: 4.5vw;
+      font-weight: 600;
+    }
+  }
+}
