@@ -3,6 +3,7 @@ import { View } from "@tarojs/components";
 import { NavBar, Grid, Image } from "@nutui/nutui-react-taro";
 import { ArrowLeft } from "@nutui/icons-react";
 import "./index.scss";
+import EditCard from "/src/components/edit-card";
 
 function Index() {
   const list = [
@@ -37,131 +38,9 @@ function Index() {
             <Grid.Item className="imgItems">
               <Image radius={5} src={list[0]} width="100%" height="100%" />
             </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
-            <Grid.Item className="imgItems">
-              <Image radius={5} src={list[0]} width="100%" height="100%" />
-            </Grid.Item>
           </Grid>
         </View>
+        <EditCard></EditCard>
       </View>
     </View>
   );
