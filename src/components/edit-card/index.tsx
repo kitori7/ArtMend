@@ -1,14 +1,39 @@
-import React from 'react'
-import { Popup } from '@nutui/nutui-react-taro'
-
+import React from "react";
+import { View } from "@tarojs/components";
+import { Popup, Image } from "@nutui/nutui-react-taro";
+import "../../icon/iconfont.css";
+import "./index.scss";
 export default function EditCard() {
   return (
     <Popup
-    closeable
-    visible={true}
-    left="返回"
-    title="我是标题"
-    position="bottom"
-  ></Popup>
-  )
+      closeable
+      style={{ width: "100%", height: "90%" }}
+      visible={true}
+      left="< 返回"
+      title="图片详情"
+      position="bottom"
+      className="pop"
+    >
+      <View className="imgBox">
+        <Image
+          className="img"
+          src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg"
+        ></Image>
+      </View>
+      <View className="btnBox">
+        <View className="right item">
+          <p className="iconfont">&#xe636;</p>
+          <p>编辑</p>
+        </View>
+        <View className="center item">
+          <span className="iconfont">&#xe739;</span>
+          <p>分享</p>
+        </View>
+        <View className="left item">
+          <span className="iconfont">&#xe74b;</span>
+          <p>删除</p>
+        </View>
+      </View>
+    </Popup>
+  );
 }
