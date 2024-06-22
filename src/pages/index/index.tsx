@@ -14,17 +14,7 @@ function Index() {
   return (
     <View className="nutui-react-demo">
       <View className="index">
-        <Swiper
-          className="swiper"
-          height={225}
-          autoPlay
-          loop
-          indicator
-          // style={{
-          //   "--nutui-indicator-color": "#426543",
-          //   "--nutui-indicator-dot-color": "#426ddd",
-          // }}
-        >
+        <Swiper className="swiper" height={225} autoPlay loop indicator>
           {list.map((item, index) => {
             return (
               <Swiper.Item key={item}>
@@ -38,9 +28,9 @@ function Index() {
             );
           })}
         </Swiper>
-        <Button className="import" shape="square" block>
+        {/* <Button className="import" shape="square" block>
           <span>+</span> 导入
-        </Button>
+        </Button> */}
         <View className="tabbar">
           <Tabbar
             className="tabbar"
