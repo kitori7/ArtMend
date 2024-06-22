@@ -60,37 +60,34 @@
   justify-content: left;
   align-items: center;
   background-color: #232429;
-  height: 58vw;
+  height: 50vw;
   width: 100%;
 
-  .tabbar {
-    position: relative;
-    padding-top: 0vw;
-    margin-top: 4vw;
-    margin-bottom: 6vw;
+  .items {
+    margin-top: 6vw;
     background-color: #232429;
-    border-bottom: 0;
-    border-top: 0;
-    height: 25vw;
+    display: flex;
+    height: 20vw;
 
     .item {
       margin: 0 10vw;
       flex: none;
-      width: 20vw;
-      height: 20vw;
-      --nutui-tabbar-text-large-font-size: 6vw;
-      --nutui-tabbar-text-large-font-weight: 800;
-      background-color: #2ad3a2;
-      border-radius: 10vw;
+      width: 100px;
+      text-align: center;
+      height: 45px;
+      font-size: 24px;
+      line-height: 45px;
+      background-color: #363636;
+      border-radius: 8px;
+      color: #fff;
+
+      &.active {
+        background-color: #2ad3a2;
+        color: #000;
+      }
     }
 
-    .mask {
-      position: absolute;
-      bottom: -1vw;
-      width: 100%;
-      height: 6vw;
-      background-color: #232429;
-    }
+
   }
 
   .btn {
@@ -99,6 +96,7 @@
     background-color: #2ad3a2;
     font-size: 8vw;
     font-weight: 800;
+    color: #fff;
   }
 
 

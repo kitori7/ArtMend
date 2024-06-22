@@ -28,17 +28,22 @@ function Index() {
             );
           })}
         </Swiper>
-        <View className="tabbar">
-          <div className="item">
+        <View className="items-content">
+          <div className="main-item">
             <span className="iconfont">&#xe636;</span>
             <span>图片编辑</span>
           </div>
-          <div className="item">
+          <div
+            className="main-item"
+            onClick={() => {
+              Taro.navigateTo({ url: "/pages/smear/index" });
+            }}
+          >
             <span className="iconfont">&#xe632;</span>
             <span>Ai消除</span>
           </div>
           <div
-            className="item"
+            className="main-item"
             onClick={() => {
               Taro.navigateTo({ url: "/pages/recognize/index?activeTab=0" });
             }}
@@ -47,7 +52,7 @@ function Index() {
             <span>Ai抠图</span>
           </div>
           <div
-            className="item"
+            className="main-item"
             onClick={() => {
               Taro.navigateTo({ url: "/pages/recognize/index?activeTab=1" });
             }}

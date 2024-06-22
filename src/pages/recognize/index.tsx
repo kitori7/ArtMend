@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "@tarojs/components";
 import {
   NavBar,
   Image,
-  Tabbar,
   Button,
   Uploader,
   Overlay,
@@ -101,19 +100,21 @@ function Index() {
       },
     });
   }
+  function navigateTo() {
+    Taro.switchTab({
+      url: "/pages/index/index",
+    });
+  }
   return (
     <View className="nutui-react-demo">
       <View className="index">
         <View className="w">
           <NavBar
             className="navbar"
+            onBackClick={() => navigateTo()}
             back={
               <>
-                <ArrowLeft
-                  onClick={() => {
-                    Taro.navigateBack();
-                  }}
-                />
+                <ArrowLeft />
                 返回
               </>
             }
@@ -143,21 +144,26 @@ function Index() {
           </View>
         </View>
         <View className="bottom">
-          <Tabbar
-            className="tabbar"
-            defaultValue={0}
-            value={activeIndex}
-            onSwitch={(value) => {
-              setActiveIndex(value);
-              setTitle(titleArr[value]);
-            }}
-            activeColor="white"
-            inactiveColor="black"
-          >
-            <Tabbar.Item className="item" title="抠图" />
-            <Tabbar.Item className="item" title="文字" />
-            <View className="mask"></View>
-          </Tabbar>
+          <View className="items">
+            <View
+              onClick={() => {
+                setActiveIndex(0);
+                setTitle(titleArr[0]);
+              }}
+              className={`item ${activeIndex === 0 ? "active" : ""}`}
+            >
+              抠图
+            </View>
+            <View
+              onClick={() => {
+                setActiveIndex(1);
+                setTitle(titleArr[1]);
+              }}
+              className={`item ${activeIndex === 1 ? "active" : ""}`}
+            >
+              文字
+            </View>
+          </View>
           <Button
             className="btn"
             onClick={() => {

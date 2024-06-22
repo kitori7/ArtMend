@@ -32,21 +32,23 @@
       background-color: #000;
     }
 
-    .tabbar {
+    .items-content {
       display: flex;
       flex-wrap: wrap;
       width: 90%;
       margin: 2vw 0;
       border: 1px solid #aeabab;
       background-color: #fff;
-      .item {
+
+      .main-item {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 50%;
-        height: 25vw;
+        height: 26vw;
         font-size: 3.5vw;
+
         .iconfont {
           font-size: 10vw !important;
         }

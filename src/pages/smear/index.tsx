@@ -25,7 +25,9 @@ function Index() {
             <>
               <ArrowLeft
                 onClick={() => {
-                  Taro.navigateBack();
+                  Taro.switchTab({
+                    url: "/pages/index/index",
+                  });
                 }}
               />
               返回
