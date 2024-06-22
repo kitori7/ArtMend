@@ -2,6 +2,7 @@ import React from "react";
 import { View } from "@tarojs/components";
 import { Swiper, Button, Tabbar, Image } from "@nutui/nutui-react-taro";
 import { Cart, Category, Find, Home, User } from "@nutui/icons-react";
+import Taro from "@tarojs/taro";
 import "./index.scss";
 import "../../icon/iconfont.css";
 const list = [
@@ -42,7 +43,16 @@ function Index() {
           >
             <Tabbar.Item
               title="图片编辑"
-              icon={<span className="iconfont">&#xe636;</span>}
+              icon={
+                <span
+                  onClick={() => {
+                    Taro.navigateTo({ url: "/pages/smear/index" });
+                  }}
+                  className="iconfont"
+                >
+                  &#xe636;
+                </span>
+              }
             />
             <Tabbar.Item
               title="Ai消除"
