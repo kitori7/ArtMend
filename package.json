@@ -38,6 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
+    "@imgly/background-removal": "^1.5.3",
     "@nutui/icons-react": "^1.0.4",
     "@nutui/nutui-react-taro": "^2.3.10",
     "@tarojs/components": "3.6.30",

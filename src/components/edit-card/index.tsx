@@ -9,7 +9,6 @@ export default function EditCard() {
       closeable
       style={{ width: "100%", height: "90%" }}
       visible={true}
-      left="< 返回"
       title="图片详情"
       position="bottom"
       className="pop"

@@ -37,11 +37,21 @@ function Index() {
             <span className="iconfont">&#xe632;</span>
             <span>Ai消除</span>
           </div>
-          <div className="item">
+          <div
+            className="item"
+            onClick={() => {
+              Taro.navigateTo({ url: "/pages/recognize/index?activeTab=0" });
+            }}
+          >
             <span className="iconfont">&#xe6e1;</span>
             <span>Ai抠图</span>
           </div>
-          <div className="item">
+          <div
+            className="item"
+            onClick={() => {
+              Taro.navigateTo({ url: "/pages/recognize/index?activeTab=1" });
+            }}
+          >
             <span className="iconfont">&#xe665;</span>
             <span>文字识别</span>
           </div>
