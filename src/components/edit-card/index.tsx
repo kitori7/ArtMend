@@ -21,17 +21,21 @@ export default function EditCard() {
         ></Image>
       </View>
       <View className="btnBox">
-        <View className="right item">
+        <View className="item">
           <p className="iconfont">&#xe636;</p>
           <p>编辑</p>
         </View>
-        <View className="center item">
+        <View className="item">
           <span className="iconfont">&#xe739;</span>
           <p>分享</p>
         </View>
-        <View className="left item">
+        <View className="item">
           <span className="iconfont">&#xe74b;</span>
           <p>删除</p>
+        </View>
+        <View className="item">
+          <span className="iconfont">&#xe64a;</span>
+          <p>下载</p>
         </View>
       </View>
     </Popup>
