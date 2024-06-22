@@ -22,7 +22,11 @@ function Index() {
           className="navbar"
           back={
             <>
-              <ArrowLeft />
+              <ArrowLeft
+                onClick={() => {
+                  Taro.navigateBack();
+                }}
+              />
               返回
             </>
           }
