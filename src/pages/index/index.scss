@@ -46,7 +46,10 @@
         align-items: center;
         width: 50%;
         height: 25vw;
-        font-size: 5vw;
+        font-size: 3.5vw;
+        .iconfont {
+          font-size: 10vw !important;
+        }
       }
     }
 
