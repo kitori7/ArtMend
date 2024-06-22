@@ -1,7 +1,6 @@
 import React from "react";
 import { View } from "@tarojs/components";
 import { Swiper, Button, Tabbar, Image } from "@nutui/nutui-react-taro";
-import { Cart, Category, Find, Home, User } from "@nutui/icons-react";
 import Taro from "@tarojs/taro";
 import "./index.scss";
 import "../../icon/iconfont.css";
@@ -29,62 +28,23 @@ function Index() {
             );
           })}
         </Swiper>
-        {/* <Button className="import" shape="square" block>
-          <span>+</span> 导入
-        </Button> */}
         <View className="tabbar">
-          <Tabbar
-            className="tabbar"
-            inactiveColor="#000"
-            activeColor="#000"
-            onSwitch={(value) => {
-              console.log(value);
-            }}
-          >
-            <Tabbar.Item
-              title="图片编辑"
-              icon={
-                <span
-                  onClick={() => {
-                    Taro.navigateTo({ url: "/pages/smear/index" });
-                  }}
-                  className="iconfont"
-                >
-                  &#xe636;
-                </span>
-              }
-            />
-            <Tabbar.Item
-              title="Ai消除"
-              icon={<span className="iconfont">&#xe632;</span>}
-            />
-            <Tabbar.Item
-              title="Ai抠图"
-              icon={
-                <span
-                  onClick={() => {
-                    Taro.navigateTo({ url: "/pages/recognize/index" });
-                  }}
-                  className="iconfont"
-                >
-                  &#xe6e1;
-                </span>
-              }
-            />
-            <Tabbar.Item
-              title="文字识别"
-              icon={
-                <span
-                  onClick={() => {
-                    Taro.navigateTo({ url: "/pages/recognize/index" });
-                  }}
-                  className="iconfont"
-                >
-                  &#xe665;
-                </span>
-              }
-            />
-          </Tabbar>
+          <div className="item">
+            <span className="iconfont">&#xe636;</span>
+            <span>图片编辑</span>
+          </div>
+          <div className="item">
+            <span className="iconfont">&#xe632;</span>
+            <span>Ai消除</span>
+          </div>
+          <div className="item">
+            <span className="iconfont">&#xe6e1;</span>
+            <span>Ai抠图</span>
+          </div>
+          <div className="item">
+            <span className="iconfont">&#xe665;</span>
+            <span>文字识别</span>
+          </div>
         </View>
         <View className="history">
           <h3>历史记录</h3>
