@@ -12,6 +12,7 @@ import {
 import "./index.scss";
 import "./iconfont.css";
 import "../../icon/iconfont.css";
+import Taro from "@tarojs/taro";
 function Index() {
   const [value, setValue] = useState(40);
   const [smearBoxShow, isSboxShow] = useState(false);

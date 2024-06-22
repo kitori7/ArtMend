@@ -3,6 +3,7 @@ import { View } from "@tarojs/components";
 import { Swiper, Button, Tabbar, Image } from "@nutui/nutui-react-taro";
 import { Cart, Category, Find, Home, User } from "@nutui/icons-react";
 import Taro from "@tarojs/taro";
+import Taro from "@tarojs/taro";
 import "./index.scss";
 import "../../icon/iconfont.css";
 const list = [
