@@ -1,88 +1,72 @@
 import React, { useState } from "react";
 import { View } from "@tarojs/components";
-import { NavBar, Image, Tabbar, Button, Range } from "@nutui/nutui-react-taro";
+import {
+  NavBar,
+  Image,
+  Tabbar,
+  Button,
+  Range,
+  Toast,
+  Uploader,
+} from "@nutui/nutui-react-taro";
 import { ArrowLeft, Download } from "@nutui/icons-react";
 
 import "./index.scss";
+import Taro from "@tarojs/taro";
 
 function Index() {
-  let [activeIndex, setActiveIndex] = useState(0);
-  let [show, setShow] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const titleArr = ["AI抠图", "识别文字"];
+  const [title, setTitle] = useState(titleArr[0]);
+
+  // 图片部分
+  function onStart(res) {
+    console.log(res);
+  }
   return (
     <View className="nutui-react-demo">
       <View className="index">
-        {show && (
-          <View className="w">
-            <NavBar
-              className="navbar"
-              back={
-                <>
-                  <ArrowLeft />
-                  返回
-                </>
-              }
-              right={
-                <span
-                  className="flex-center"
-                  onClick={(e) => console.log("下載")}
-                >
-                  <Download />
-                </span>
-              }
-              onBackClick={(e) => console.log("返回")}
-            >
-              Ai抠图
-            </NavBar>
-            <View className="center">
-              <Button className="btn" fill="none">
-                点击导入图片
-              </Button>
-              <Image
-                className="img"
-                // src={src}
-                onClick={() => {
-                  console.log("click image");
-                }}
-              />
-            </View>
+        <View className="w">
+          <NavBar
+            className="navbar"
+            back={
+              <>
+                <ArrowLeft />
+                返回
+              </>
+            }
+            right={
+              <span
+                className="flex-center"
+                onClick={(e) => console.log("下載")}
+              >
+                <Download />
+              </span>
+            }
+            onBackClick={(e) => console.log("返回")}
+          >
+            {title}
+          </NavBar>
+          <View className="center">
+            <Uploader
+              onStart={onStart}
+              style={{
+                marginInlineEnd: "10px",
+                marginBottom: "10px",
+              }}
+              onChange={(v) => {
+                console.log("outer onChange", v);
+              }}
+            />
+            <Image
+              className="img"
+              // src={src}
+              onClick={() => {
+                console.log("click image");
+              }}
+            />
           </View>
-        )}
-        {!show && (
-          <View className="w">
-            <NavBar
-              className="navbar"
-              back={
-                <>
-                  <ArrowLeft />
-                  返回
-                </>
-              }
-              right={
-                <span
-                  className="flex-center"
-                  onClick={(e) => console.log("下載")}
-                >
-                  <Download />
-                </span>
-              }
-              onBackClick={(e) => console.log("返回")}
-            >
-              文字识别
-            </NavBar>
-            <View className="center">
-              <Button className="btn" fill="none">
-                点击导入图片
-              </Button>
-              <Image
-                className="img"
-                // src={src}
-                onClick={() => {
-                  console.log("click image");
-                }}
-              />
-            </View>
-          </View>
-        )}
+        </View>
         <View className="bottom">
           <Tabbar
             className="tabbar"
@@ -90,10 +74,10 @@ function Index() {
             value={activeIndex}
             onSwitch={(value) => {
               setActiveIndex(value);
-              setShow(!show);
+              setTitle(titleArr[value]);
             }}
-            activeColor="black"
-            inactiveColor="white"
+            activeColor="white"
+            inactiveColor="black"
           >
             <Tabbar.Item className="item" title="抠图" />
             <Tabbar.Item className="item" title="文字" />

@@ -60,11 +60,29 @@ function Index() {
             />
             <Tabbar.Item
               title="Ai抠图"
-              icon={<span className="iconfont">&#xe6e1;</span>}
+              icon={
+                <span
+                  onClick={() => {
+                    Taro.navigateTo({ url: "/pages/recognize/index" });
+                  }}
+                  className="iconfont"
+                >
+                  &#xe6e1;
+                </span>
+              }
             />
             <Tabbar.Item
               title="文字识别"
-              icon={<span className="iconfont">&#xe665;</span>}
+              icon={
+                <span
+                  onClick={() => {
+                    Taro.navigateTo({ url: "/pages/recognize/index" });
+                  }}
+                  className="iconfont"
+                >
+                  &#xe665;
+                </span>
+              }
             />
           </Tabbar>
         </View>
