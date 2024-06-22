@@ -17,10 +17,14 @@ export default defineAppConfig({
       {
         pagePath: "pages/index/index",
         text: "首页",
+        iconPath:'./icon/index.png',
+        selectedIconPath:"./icon/indexActive.png"
       },
       {
         pagePath: "pages/mine/index",
         text: "我的",
+        iconPath:'./icon/mine.png',
+        selectedIconPath:"./icon/mineActive.png"
       },
     ],
   },
