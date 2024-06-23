@@ -1,12 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .mine {
   --nutui-navbar-background: #1c1c1c;
   --nutui-navbar-title-font-color: #fff;
   --nutui-navbar-height: 58px;
+
   .header {
     width: 360px;
     height: 58px;
@@ -27,22 +23,16 @@
   }
 }
 
-.nutui-react-demo {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-}
 
-.index {
+.mine-index {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 16px;
   margin-bottom: 30px;
   width: 100%;
-  .navbar {
+
+  .mine-navbar {
     width: 100%;
     text-align: center;
     height: 15vw;
@@ -52,33 +42,36 @@
     background-color: #000;
     color: #fff;
   }
+
   .user {
+    box-sizing: border-box;
     display: flex;
     justify-content: left;
     align-items: center;
     width: 90%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     margin: 2vw 0;
     height: 30vw;
     color: #000;
-    background-color: #eeeeee;
     border-radius: 5vw;
-    .head {
-      width: 20vw;
-      height: 20vw;
-      margin: 0 5vw 0 10vw;
-      border-radius: 20vw;
-      overflow: hidden;
-      border: 1px solid #ccc;
+    padding: 0 20px;
+
+    .name {
+      flex: 1;
+      margin-left: 20px;
     }
   }
+
   .other {
+    margin-top: 20px;
     width: 90%;
     list-style: none;
-    background-color: #f5f5f5;
+
     li {
       width: 100%;
     }
-    .btn {
+
+    .cell-btn {
       width: 100%;
       height: 15vw;
       text-align: center;
@@ -86,17 +79,19 @@
       font-size: 4.5vw;
       font-weight: 600;
       --nutui-popup-border-radius: 0px;
-      margin: 0 !important;
       border-bottom: 1px solid #ccc;
     }
   }
+
   .about {
     height: 80%;
+
     h2 {
       font-size: 8vw;
       text-align: center;
       margin: 3vw 0;
     }
+
     p {
       padding: 0 10vw;
       font-size: 4.5vw;

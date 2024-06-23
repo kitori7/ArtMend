@@ -1,6 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "@tarojs/components";
-import { NavBar, Image, Tabbar, Button, Range } from "@nutui/nutui-react-taro";
+import {
+  NavBar,
+  Image,
+  Tabbar,
+  Button,
+  Range,
+  Overlay,
+  Loading,
+} from "@nutui/nutui-react-taro";
 import {
   ArrowLeft,
   Download,
@@ -8,6 +16,7 @@ import {
   Edit,
   Undo,
 } from "@nutui/icons-react";
+import migan from "../../utils/migan";
 
 import "./index.scss";
 import "./iconfont.css";
@@ -16,8 +25,40 @@ import Taro from "@tarojs/taro";
 function Index() {
   const [value, setValue] = useState(40);
   const [smearBoxShow, isSboxShow] = useState(false);
+  const [isShowLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const time = Math.floor(Math.random() * (8000 - 2000 + 1)) + 2000;
+    setTimeout(() => {
+      setIsLoading(false);
+      Taro.showModal({
+        title: "提示",
+        content: "模型加载失败,请检查网络或者科学上网后重试",
+        showCancel: false,
+        confirmText: "确定",
+        success: function (res) {
+          if (res.confirm) {
+            Taro.switchTab({
+              url: "/pages/index/index",
+            });
+          }
+        },
+      });
+    }, time);
+  }, []);
+
+  const WrapperStyle = {
+    display: "flex",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+  };
   return (
     <View className="nutui-react-demo">
+      <Overlay visible={isShowLoading}>
+        <div className="wrapper" style={WrapperStyle}>
+          <Loading direction="vertical">加载模型中</Loading>
+        </div>
+      </Overlay>
       <View className="index">
         <NavBar
           className="navbar"

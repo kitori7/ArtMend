@@ -39,6 +39,16 @@ function Index() {
     setIsShowImg(true);
     setSrc(img);
   }
+  function blobToBase64(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        resolve(reader.result);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
   // 开始
   const [loading, setLoading] = useState(false);
   const [isShowCard, setIsShowCard] = useState(false);
@@ -60,8 +70,8 @@ function Index() {
         const response = await fetch(src);
         const blob = await response.blob();
         const result = await removeBackground(blob);
-        const url = URL.createObjectURL(result);
-        seCardImg(url);
+        const base64 = await blobToBase64(result);
+        seCardImg(base64 as string);
         setIsShowCard(true);
       } catch (error) {
         Taro.showToast({ title: "背景移除失败", icon: "none" });
@@ -143,14 +153,14 @@ function Index() {
             )}
           </View>
         </View>
-        <View className="bottom">
-          <View className="items">
+        <View className="reco-bottom">
+          <View className="btn-items">
             <View
               onClick={() => {
                 setActiveIndex(0);
                 setTitle(titleArr[0]);
               }}
-              className={`item ${activeIndex === 0 ? "active" : ""}`}
+              className={`btn-item ${activeIndex === 0 ? "active" : ""}`}
             >
               抠图
             </View>
@@ -159,7 +169,7 @@ function Index() {
                 setActiveIndex(1);
                 setTitle(titleArr[1]);
               }}
-              className={`item ${activeIndex === 1 ? "active" : ""}`}
+              className={`btn-item ${activeIndex === 1 ? "active" : ""}`}
             >
               文字
             </View>

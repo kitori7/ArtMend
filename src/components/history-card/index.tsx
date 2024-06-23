@@ -7,47 +7,14 @@ import Taro from "@tarojs/taro";
 import { IImage } from "types/data";
 interface IProps {
   visible: boolean;
-  imgUrl: string;
-  onClose: () => void;
+  imgObj: IImage;
+  onClose: (id?: number) => void;
   children?: React.ReactNode;
 }
-export default memo<IProps>(function EditCard({ visible, imgUrl, onClose }) {
-  useEffect(() => {
-    async function effect() {
-      // 检查 imgUrl 是否为空
-      if (!imgUrl || !visible) {
-        return;
-      }
-
-      const img = {
-        id: new Date().getTime(),
-        url: imgUrl,
-      };
-
-      try {
-        const res = await Taro.getStorage({ key: "history" });
-        const arr = res.data || [];
-
-        arr.push(img);
-
-        await Taro.setStorage({
-          key: "history",
-          data: arr,
-        });
-      } catch (error) {
-        // 如果获取 storage 失败，初始化一个新的数组
-        await Taro.setStorage({
-          key: "history",
-          data: [img],
-        });
-      }
-    }
-
-    effect();
-  }, [visible]);
+export default memo<IProps>(function EditCard({ visible, imgObj, onClose }) {
   function saveImg() {
     Taro.saveImageToPhotosAlbum({
-      filePath: imgUrl,
+      filePath: imgObj.url,
       success: (res) => {
         Taro.showToast({
           title: "保存成功",
@@ -71,7 +38,19 @@ export default memo<IProps>(function EditCard({ visible, imgUrl, onClose }) {
 
   function onEdit() {
     Taro.navigateTo({
-      url: `/pages/edit/index?src=${imgUrl}`,
+      url: `/pages/edit/index?src=${imgObj.url}`,
+    });
+  }
+
+  function onDelete() {
+    Taro.showModal({
+      title: "提示",
+      content: "确定要删除吗？",
+      success: (res) => {
+        if (res.confirm) {
+          onClose(imgObj.id);
+        }
+      },
     });
   }
   return (
@@ -84,7 +63,7 @@ export default memo<IProps>(function EditCard({ visible, imgUrl, onClose }) {
       onClose={onClose}
     >
       <View className="imgBox">
-        <Image className="img" mode="aspectFit" src={imgUrl}></Image>
+        <Image className="img" mode="aspectFit" src={imgObj.url}></Image>
       </View>
       <View className="btnBox">
         <View
@@ -108,6 +87,15 @@ export default memo<IProps>(function EditCard({ visible, imgUrl, onClose }) {
         >
           <span className="iconfont">&#xe64a;</span>
           <p>下载</p>
+        </View>
+        <View
+          className="item"
+          onClick={() => {
+            onDelete();
+          }}
+        >
+          <span className="iconfont">&#xe74b;</span>
+          <p>删除</p>
         </View>
       </View>
     </Popup>

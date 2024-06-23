@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "@tarojs/components";
-import { Swiper, Button, Tabbar, Image } from "@nutui/nutui-react-taro";
+import { Swiper, Button, Tabbar, Image, Empty } from "@nutui/nutui-react-taro";
 import Taro from "@tarojs/taro";
 import "./index.scss";
 import "../../icon/iconfont.css";
-const list = [
-  "https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg",
-  "https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg",
-  "https://storage.360buyimg.com/jdc-article/welcomenutui.jpg",
-  "https://storage.360buyimg.com/jdc-article/fristfabu.jpg",
-];
+import { IImage } from "types/data";
+import empty from "../../assets/images/empty.png";
+
+import swiperList from "../../assets/images";
+
 function Index() {
+  const [historyArr, setHistoryArr] = useState([]);
+  useEffect(() => {
+    async function effect() {
+      try {
+        const arr = await Taro.getStorage({
+          key: "history",
+        });
+        setHistoryArr(arr.data);
+      } catch (error) {
+        setHistoryArr([]);
+      }
+    }
+    effect();
+  });
   return (
-    <View className="nutui-react-demo">
-      <View className="index">
+    <View className="nutui-react">
+      <View className="main-index">
         <Swiper className="swiper" height={225} autoPlay loop indicator>
-          {list.map((item, index) => {
+          {swiperList.map((item) => {
             return (
               <Swiper.Item key={item}>
-                <img
-                  className="image"
-                  src={list[index]}
-                  alt={list[index]}
-                  draggable={false}
-                />
+                <Image className="image" mode="aspectFill" src={item} />
               </Swiper.Item>
             );
           })}
         </Swiper>
         <View className="items-content">
-          <div className="main-item">
+          <div
+            className="main-item"
+            onClick={() => {
+              Taro.navigateTo({ url: "/pages/edit/index" });
+            }}
+          >
             <span className="iconfont">&#xe636;</span>
             <span>图片编辑</span>
           </div>
@@ -61,13 +74,36 @@ function Index() {
             <span>文字识别</span>
           </div>
         </View>
-        <View className="history">
+        <View className="history-content">
           <h3>历史记录</h3>
-          <View className="imgs">
-            <Image className="img" src={list[0]}></Image>
-            <Image className="img" src={list[0]}></Image>
-            <Image className="img" src={list[0]}></Image>
-            <Image className="img" src={list[0]}></Image>
+          <View
+            className="imgs"
+            onClick={() => {
+              Taro.navigateTo({
+                url: "/pages/history/index",
+              });
+            }}
+          >
+            {historyArr.length === 0 ? (
+              <Empty
+                className="index-empty"
+                style={{ flex: 1 }}
+                imageSize={200}
+                size="base"
+                image={empty}
+                title="暂无数据"
+              ></Empty>
+            ) : (
+              historyArr.slice(0, 4).map((item: IImage) => {
+                return (
+                  <Image
+                    className="index-img"
+                    key={item.id}
+                    src={item.url}
+                  ></Image>
+                );
+              })
+            )}
           </View>
         </View>
       </View>
